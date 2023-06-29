@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detaily rezervace</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="{{ url_for('static', filename='T-Mobile_New_Logo.png') }}" alt="T-Mobile Logo" class="logo">
+        </header>
+        <h1 class="title">Detaily rezervace</h1>
+
+        <div class="content">
+            <div class="reservation-details">
+                <h2>Kategorie vozidla: {{ data["car_category"] }}</h2>
+                <h2>Období: {{ data["start_date"] }} - {{ data["end_date"] }}</h2>
+                <form action="/confirm_reservation" method="POST">
+                    <div class="input-group">
+                        <label for="driver_name">Jméno řidiče:</label>
+                        <input type="text" id="driver_name" name="driver_name" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="purpose">Účel:</label>
+                        <input type="text" id="purpose" name="purpose" required>
+                    </div>
+                    <br>
+                    <button class="submit-btn" type="submit">Pokračovat</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

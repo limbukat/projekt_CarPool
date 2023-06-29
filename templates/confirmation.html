@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Potvrzení rezervace</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="{{ url_for('static', filename='T-Mobile_New_Logo.png') }}" alt="T-Mobile Logo" class="logo">
+        </header>
+        <h1 class="title">Potvrzení rezervace</h1>
+
+        <div class="content">
+            <div class="reservation-confirmation">
+                <table class="summary-table">
+                    <tr>
+                        <th>Car category</th>
+                        <td>{{ session['car_category'] }}</td>
+                    </tr>
+                    <tr>
+                        <th>Selected Dates</th>
+                        <td>{{ session['start_date'] }} - {{ session['end_date'] }}</td>
+                    </tr>
+                    <tr>
+                        <th>Jméno řidiče</th>
+                        <td>{{ session["driver_name"] }}</td>
+                    </tr>
+                    <tr>
+                        <th>Email</th>
+                        <td>{{ session['email'] }}</td>
+                    </tr>
+                    <tr>
+                        <th>Účel</th>
+                        <td>{{ session['purpose']}}</td>
+                    </tr>
+                    <tr>
+                        <th>SPZ auta</th>
+                        <td><div class="license-plate">{{ spz }}</div></td>
+                    </tr>
+                </table>
+
+                <p>Podmínky:</p>
+                <ul>
+                    <li>Auto je k dispozici od 8:00 první den rezervace na parkovišti před hlavní budovou.</li>
+                    <li>Vrácení auta je nutné provést nejpozději do 18:00 poslední den termínu rezervace zpět na parkoviště před hlavní budovou.</li>
+                </ul>
+
+                <p>Děkujeme za rezervaci. <br> </p>
+
+                    {{ email_send_message|safe }}  <!-- email se odeslal na adresu nebo ne -->
+
+
+                <a class="back-btn" href="/">Zpět na hlavní stránku</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

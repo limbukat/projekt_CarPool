@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <title>Rezervační systém</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="{{ url_for('static', filename='T-Mobile_New_Logo.png') }}" alt="T-Mobile Logo" class="logo">
+        </header>
+        <h1 class="title">CarPool rezervační systém</h1>
+
+        <div class="content">
+            <div class="reservation-container">
+                <h3 class="subtitle">Vyberte datum rezervace auta</h3>
+                <form id="date-form" action="javascript:void(0);" method="POST">
+                    <div class="input-group">
+                        <label for="start_date">Od:</label>
+                        <input type="date" id="start_date" name="start_date" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="end_date">Do:</label>
+                        <input type="date" id="end_date" name="end_date" required>
+                    </div>
+
+                    <button class="submit-btn" type="submit">Hledat</button>
+                </form>
+            </div>
+
+            <div id="search-results" class="search-results" style="display:none;"></div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>

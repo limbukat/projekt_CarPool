@@ -1,0 +1,141 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.logo {
+    display: block;
+    max-width: 200px;
+    height: auto;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.title {
+    color: #EA0A8E;
+    text-align: center;
+}
+
+.subtitle {
+    color: #EA0A8E;
+    margin-top: 30px;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.reservation-container, .search-results {
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    width: 45%;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    color: #666666;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.input-group input[type="date"] {
+    max-width: 200px;
+}
+
+.submit-btn {
+    background-color: #EA0A8E;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background-color: #C0007B;
+}
+
+.results-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.results-table th, .results-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.results-table th {
+    background-color: #f2f2f2;
+}
+
+.summary-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.summary-table th, .summary-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.summary-table th {
+    background-color: #f2f2f2;
+    width: 30%;
+}
+
+.summary-table td {
+    width: 70%;
+}
+
+.license-plate {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 24px;
+    letter-spacing: 2px;
+    background-color: #fff;
+    border: 3px solid #333;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
+    width: fit-content;
+    margin: auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.license-plate::before {
+    content: "CZ";
+    background-color: #003399;
+    color: #fff;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 5px 0 0 5px;
+    margin-right: 10px;
+}
+
+.red-text {
+    color: red;
+}

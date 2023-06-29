@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Potvrzení rezervace</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Potvrzení rezervace vozidla z T-Mobile CarPool</h1>
+
+        <div class="content">
+            <div class="reservation-confirmation">
+                <table class="summary-table">
+                    <tr>
+                        <th>Kategorie vozidla</th>
+                        <td>{{ session['car_category'] }}</td>
+                    </tr>
+                    <tr>
+                        <th>Období</th>
+                        <td>{{ session['start_date'] }} - {{ session['end_date'] }}</td>
+                    </tr>
+                    <tr>
+                        <th>Jméno řidiče</th>
+                        <td>{{ session["driver_name"] }}</td>
+                    </tr>
+                    <tr>
+                        <th>Email</th>
+                        <td>{{ session['email'] }}</td>
+                    </tr>
+                    <tr>
+                        <th>Účel</th>
+                        <td>{{ session['purpose']}}</td>
+                    </tr>
+                    <tr>
+                        <th>SPZ auta</th>
+                        <td><div class="license-plate">{{ spz }}</div></td>
+                    </tr>
+                </table>
+
+                <p>Podmínky:</p>
+                <ul>
+                    <li>Auto je k dispozici od 8:00 první den rezervace na parkovišti před hlavní budovou.</li>
+                    <li>Vrácení auta je nutné provést nejpozději do 18:00 poslední den termínu rezervace zpět na parkoviště před hlavní budovou.</li>
+                </ul>
+
+                <p>Děkujeme za rezervaci. <br>
+                    <br>
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
